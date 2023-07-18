@@ -7,6 +7,7 @@ require('dotenv').config();
 var cors=require('cors');
 const cookieParser = require("cookie-parser");
 const errorHandler = require("./middleware/error");
+const authRoutes = require ("./routes/authRoutes");
 //port 
 const port = process.env.PORT || 5000
 
@@ -16,6 +17,11 @@ app.use(bodyParser.json({limit:"5mb"}));
 app.use(bodyParser.urlencoded({limit:"5mb",extended:true}));
 app.use(cookieParser());
 app.use(cors());
+
+
+//Routes middleware 
+
+app.use('/api',authRoutes);
 
 //error middleware
 app.use(errorHandler);
