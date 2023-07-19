@@ -25,6 +25,9 @@ app.use('/api',authRoutes);
 
 //error middleware
 app.use(errorHandler);
+
+
+
 //database connection 
 mongoose.connect(process.env.DATABASE,{
     useNewUrlParser: true,
