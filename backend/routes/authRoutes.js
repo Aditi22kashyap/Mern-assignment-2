@@ -9,3 +9,4 @@ router.post('/signup', signup);
 router.get('/users', getAllUsers);
 module.exports = router;
 
+// POST
